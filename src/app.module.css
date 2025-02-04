@@ -1,0 +1,51 @@
+.app {
+	display: flex;
+	width: 500px;
+	flex-direction: column;
+	border: 1px solid;
+	border-radius: 5px;
+	font-size: 40px;
+}
+
+.screen {
+	display: flex;
+	justify-content: flex-end; /* Выравниваем по правому краю */
+	align-items: flex-end; /* Выравниваем по нижнему краю */
+	padding: 10px;
+	box-sizing: border-box; /* Учитываем padding в общей ширине и высоте */
+	background-color: rgb(192, 181, 194);
+	width: 100%;
+	height: 100px;
+}
+
+.resultScreen {
+    color: rgb(214, 138, 23);
+}
+
+.buttons {
+	background-color: rgb(237, 233, 238);
+	display: flex;
+}
+
+.leftGroup {
+	width: 75%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.rightGroup {
+	width: 25%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.button {
+    width: 125px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
