@@ -22,6 +22,28 @@ function App() {
 			}
 	};
 
+	const NumberButtonElement = (number) => {
+		return (
+			<button
+				className={styles.button}
+				key={number}
+				onClick={() => {
+					if (operator === '') {
+						if (operand1 === '0' || isResult) setOperand1(number);
+						else if (operand1 !== '0') setOperand1(operand1 + number);
+					} else {
+						if (operand2 === '0') setOperand2(number);
+						else setOperand2(operand2 + number);
+					}
+
+					setIsResult(false);
+				}}
+			>
+				{number}
+			</button>
+		);
+	};
+
 	const reset = () => {
 		setOperand1('0');
 		setOperand2('');
@@ -61,25 +83,7 @@ function App() {
 			</div>
 			<div className={styles.buttons}>
 				<div className={styles.leftGroup}>
-					{numbers.map((number) => (
-						<button
-							className={styles.button}
-							key={number}
-							onClick={() => {
-								if (operator === '') {
-									if (operand1 === '0' || isResult) setOperand1(number);
-									else if (operand1 !== '0') setOperand1(operand1 + number);
-								} else {
-									if (operand2 === '0') setOperand2(number);
-									else setOperand2(operand2 + number);
-								}
-
-								setIsResult(false);
-							}}
-						>
-							{number}
-						</button>
-					))}
+					{numbers.map((number) => NumberButtonElement(number))}
 				</div>
 				<div className={styles.rightGroup}>
 					<button className={styles.button} onClick={() => reset()}>
